@@ -1,0 +1,96 @@
+@import 'tailwindcss';
+
+/* FINCH design tokens. Change colors and fonts here. */
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+
+  --color-cream-50: #fffdf8;
+  --color-cream-100: #fbf6ec;
+  --color-cream-200: #f3eadb;
+  --color-cream-300: #e7d9c2;
+
+  --color-ink-950: #0e231e;
+  --color-ink-900: #14302a;
+  --color-ink-800: #1d4038;
+  --color-ink-700: #2a5449;
+  --color-ink-600: #3c6b5e;
+  --color-ink-500: #5a8577;
+  --color-ink-300: #a9c2b8;
+  --color-ink-100: #e1ebe5;
+  --color-ink-50: #f0f5f2;
+
+  --color-finch-700: #9a4416;
+  --color-finch-600: #c35f27;
+  --color-finch-500: #e8834a;
+  --color-finch-300: #f4b48a;
+  --color-finch-100: #fce8da;
+  --color-finch-50: #fef5ee;
+
+  --shadow-card: 0 1px 2px rgb(20 48 42 / 0.04), 0 8px 24px -12px rgb(20 48 42 / 0.18);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+  body {
+    @apply bg-cream-50 font-sans text-ink-900 antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-display tracking-tight text-ink-900;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-finch-600;
+  }
+  ::selection {
+    @apply bg-finch-100 text-ink-900;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .eyebrow {
+    @apply text-xs font-semibold tracking-[0.14em] text-finch-700 uppercase;
+  }
+  .card {
+    @apply rounded-2xl border border-cream-300/70 bg-white shadow-card;
+  }
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-ink-900;
+  }
+  .field-input {
+    @apply block w-full rounded-xl border border-cream-300 bg-white px-4 py-3 text-base text-ink-900 placeholder:text-ink-500/70 transition focus:border-ink-600 focus:ring-2 focus:ring-ink-600/20 focus:outline-none aria-[invalid=true]:border-red-600;
+  }
+}
+
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}
