@@ -16,7 +16,7 @@ function ConsultCta({ variant = 'primary' }: { variant?: 'primary' | 'accent' })
     </ButtonExternal>
   ) : (
     <ButtonLink to="/contact?topic=bookkeeping" variant={variant}>
-      Request a consultation
+      Talk to us about your books
     </ButtonLink>
   );
 }
@@ -33,31 +33,37 @@ export default function Bookkeeping() {
     <>
       <Seo
         title="Bookkeeping Services for Small Businesses"
-        description="Monthly bookkeeping, cleanup and catch-up bookkeeping, and financial reporting support for small business owners who want clear, accurate books."
+        description="Monthly bookkeeping, cleanup and catch-up, and financial reporting support for small business owners. Accurate books, explained in plain English."
       />
 
       <PageHero
         eyebrow="Bookkeeping services"
-        title="Accurate books. Clear reports. One less thing on your plate."
+        title="Books you can trust. Reports you'll actually read."
+        photo="bookkeepingHero"
         intro={
           <p>
-            Whether your books need regular care or a full catch-up, FINCH keeps your financial records organized and
-            helps you understand what they're telling you.
+            We handle the monthly work of keeping your books accurate, then tell you what the numbers are saying in
+            plain English. If things have fallen behind, we start by catching you up.
           </p>
         }
       >
         <ConsultCta />
         <ButtonLink to="/free-tools" variant="secondary">
-          Not sure where to start? Take the assessment
+          Not sure what you need? Take the 3-minute assessment
         </ButtonLink>
       </PageHero>
 
       {/* Services */}
       <Section labelledBy="services-heading">
-        <SectionHeading id="services-heading" eyebrow="Services" title="What FINCH can take care of" />
+        <SectionHeading
+          id="services-heading"
+          eyebrow="Services"
+          title="What we take off your plate"
+          intro="Most people start with one of these. If you're not sure which, that's what the first conversation is for."
+        />
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           {services.map((s) => (
-            <article key={s.id} id={s.id} className="card flex scroll-mt-28 flex-col p-7">
+            <article key={s.id} id={s.id} className="card lift flex scroll-mt-28 flex-col p-7">
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-ink-900 text-cream-50">
                 <Icon name={s.icon} className="h-6 w-6" />
               </span>
@@ -81,7 +87,7 @@ export default function Bookkeeping() {
           ))}
         </div>
         <p className="mt-6 text-sm text-ink-600">
-          Exact scope is tailored to your business and confirmed after your consultation.
+          Every business is a little different, so we confirm the exact scope with you before any work starts.
         </p>
       </Section>
 
@@ -91,8 +97,8 @@ export default function Bookkeeping() {
           <SectionHeading
             id="who-heading"
             eyebrow="Who it's for"
-            title="Built for small business owners who want to feel in control"
-            intro="You don't need to have everything figured out. Most people reach out because something feels unclear, and that's exactly the right time."
+            title="Who we work with"
+            intro="Established small businesses with real transaction volume and better things to do than reconcile a credit card statement on a Sunday night."
           />
           <ul className="space-y-4">
             {idealClients.map((c) => (
@@ -110,7 +116,7 @@ export default function Bookkeeping() {
         <SectionHeading
           id="process-heading"
           eyebrow="How it works"
-          title="Requesting a consultation is simple"
+          title="How to get started"
           align="center"
         />
         <ol className="mt-12 grid gap-6 md:grid-cols-3">

@@ -10,9 +10,9 @@ import { integrations, site } from '../config/site';
 import { EMAIL_PATTERN, buildMailto, submitForm } from '../lib/forms';
 
 const topics = [
-  { value: 'bookkeeping', label: 'Bookkeeping consultation' },
-  { value: 'cleanup', label: 'Cleanup / catch-up bookkeeping' },
-  { value: 'products', label: 'Digital products' },
+  { value: 'bookkeeping', label: 'Monthly bookkeeping' },
+  { value: 'cleanup', label: 'Cleanup or catch-up' },
+  { value: 'products', label: 'The digital shop' },
   { value: 'other', label: 'Something else' },
 ] as const;
 
@@ -22,10 +22,10 @@ type Status = 'idle' | 'sending' | 'success' | 'error' | 'mailto';
 
 function validate(f: Fields): Errors {
   const e: Errors = {};
-  if (!f.name.trim()) e.name = 'Please enter your name.';
+  if (!f.name.trim()) e.name = 'Who should we reply to?';
   if (!f.email.trim()) e.email = 'Please enter your email address.';
   else if (!EMAIL_PATTERN.test(f.email.trim())) e.email = 'Please enter a valid email address.';
-  if (!f.message.trim()) e.message = 'Please include a short message.';
+  if (!f.message.trim()) e.message = 'A sentence or two is plenty.';
   return e;
 }
 
@@ -113,16 +113,17 @@ export default function Contact() {
     <>
       <Seo
         title="Contact FINCH"
-        description="Get in touch with FINCH about bookkeeping services, cleanup bookkeeping, or digital products. Email hello@workwithfinch.com."
+        description="Talk to FINCH about monthly bookkeeping, cleanup, or the digital shop. Email hello@workwithfinch.com or send a short note here."
       />
 
       <PageHero
         eyebrow="Contact"
-        title="Let's talk about your business"
+        title="Let's talk about your books."
+        photo="contactHero"
         intro={
           <p>
-            Questions about bookkeeping, a consultation request, or something about our digital products? We'd love to
-            hear from you.
+            A few sentences is plenty: what the business does, where the books stand, and what you'd like off your
+            plate. We'll reply by email.
           </p>
         }
       />
@@ -135,8 +136,8 @@ export default function Contact() {
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-finch-100 text-finch-700">
                 <Icon name="mail" className="h-6 w-6" />
               </span>
-              <h2 className="mt-5 text-2xl font-semibold">Email FINCH</h2>
-              <p className="mt-2 text-ink-700">The most direct way to reach us.</p>
+              <h2 className="mt-5 text-2xl font-semibold">Prefer email?</h2>
+              <p className="mt-2 text-ink-700">Write to us directly. It goes to the same place.</p>
               <a
                 href={`mailto:${site.email}`}
                 className="mt-4 inline-block text-lg font-semibold break-all text-ink-900 underline decoration-finch-500 decoration-2 underline-offset-4 hover:text-finch-700"
@@ -148,7 +149,7 @@ export default function Contact() {
             {integrations.booking && (
               <div className="card p-7">
                 <h2 className="text-xl font-semibold">Prefer to pick a time?</h2>
-                <p className="mt-2 text-ink-700">Book a consultation directly on the calendar.</p>
+                <p className="mt-2 text-ink-700">Grab a slot on the calendar and skip the back-and-forth.</p>
                 <ButtonExternal href={site.bookingUrl} variant="primary" className="mt-5 w-full">
                   <Icon name="calendar" className="h-4 w-4" />
                   Book a consultation
@@ -157,12 +158,12 @@ export default function Contact() {
             )}
 
             <div className="rounded-2xl bg-cream-100 p-7">
-              <h2 className="font-sans text-base font-semibold">Helpful to include</h2>
+              <h2 className="font-sans text-base font-semibold">Not sure what to write? Try:</h2>
               <ul className="mt-3 space-y-2 text-ink-700">
                 {[
-                  'What your business does',
-                  'Where your books stand today',
-                  'What kind of help you are looking for',
+                  'What the business does and roughly how big it is',
+                  'Where the books stand (current, a bit behind, “it’s complicated”)',
+                  'What you use now: QuickBooks, Xero, a spreadsheet, a shoebox',
                 ].map((t) => (
                   <li key={t} className="flex gap-2.5">
                     <Icon name="check" className="mt-0.5 h-5 w-5 shrink-0 text-finch-600" />
@@ -175,19 +176,19 @@ export default function Contact() {
 
           {/* Form */}
           <div className="card p-6 sm:p-9">
-            <h2 className="text-2xl font-semibold">Send a message</h2>
+            <h2 className="text-2xl font-semibold">Send a note</h2>
 
             {!live && (
               <IntegrationNotice className="mt-4">
-                Online form submissions aren't connected yet. When you click <strong>Open in email app</strong>, your
-                message will be pre-filled in your own email program so you can send it to {site.email}.
+                This form isn't connected to our inbox yet. Clicking <strong>Open in email app</strong> drafts your message
+                in your own email program, ready to send to {site.email}.
               </IntegrationNotice>
             )}
 
             {status === 'success' ? (
               <div role="status" className="mt-6 rounded-xl bg-ink-50 p-6">
-                <p className="font-semibold text-ink-900">Thanks, your message was sent.</p>
-                <p className="mt-1 text-ink-700">We'll get back to you by email.</p>
+                <p className="font-semibold text-ink-900">Got it. Thanks for writing.</p>
+                <p className="mt-1 text-ink-700">We'll reply by email.</p>
               </div>
             ) : (
               <form onSubmit={onSubmit} noValidate className="mt-6 space-y-5">
@@ -216,7 +217,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="contact-topic" className="field-label">
-                      What can we help with?
+                      What's this about?
                     </label>
                     <select {...fieldProps('topic')}>
                       {topics.map((t) => (

@@ -6,9 +6,9 @@ import Section, { SectionHeading } from '../components/Section';
 import Seo from '../components/Seo';
 
 const upcoming: { icon: IconName; name: string; body: string }[] = [
-  { icon: 'chart', name: 'Profit snapshot calculator', body: 'A quick way to estimate monthly profit from your revenue and expenses.' },
-  { icon: 'shield', name: 'Tax set-aside planner', body: 'Plan how much of each payment to set aside, using the percentage your tax pro recommends.' },
-  { icon: 'calendar', name: 'Bookkeeping routine checklist', body: 'A weekly and monthly checklist for keeping your books current.' },
+  { icon: 'chart', name: 'Profit snapshot calculator', body: 'Plug in last month’s revenue and expenses and see what you actually kept.' },
+  { icon: 'shield', name: 'Tax set-aside planner', body: 'Work out how much of each payment to set aside, using the percentage your tax professional gives you.' },
+  { icon: 'calendar', name: 'Bookkeeping routine checklist', body: 'The weekly and monthly to-dos that keep the books from getting away from you.' },
 ];
 
 export default function FreeTools() {
@@ -16,16 +16,17 @@ export default function FreeTools() {
     <>
       <Seo
         title="Free Business Clarity Assessment"
-        description="Take FINCH's free Business Clarity Assessment. Answer a few quick questions about your finances, bookkeeping, and operations, and get personalized recommendations. No email required."
+        description="A free three-minute check-up for your business: 13 questions about your books, systems, and tax readiness, with a prioritized list of what to fix first. No email required."
       />
 
       <PageHero
         eyebrow="Free tools"
-        title="See where your business stands in a few minutes"
+        title="A three-minute check-up for your business."
+        photo="freeToolsHero"
         intro={
           <p>
-            The Business Clarity Assessment looks at four areas of your business and gives you practical, personalized
-            next steps. It's free, private, and doesn't require an email address.
+            Thirteen questions about your books, your systems, and how ready you feel for tax season. You'll get a score
+            across four areas and a short list of what to tackle first. No email required, and nobody will call you.
           </p>
         }
       />
@@ -40,8 +41,8 @@ export default function FreeTools() {
         <SectionHeading
           id="more-tools-heading"
           eyebrow="More on the way"
-          title="More free tools are in development"
-          intro="We're building more simple tools to help you understand your numbers. Check back soon."
+          title="A few more free tools are on the way"
+          intro="Small, useful calculators for the questions that come up every month. They'll show up here when they're ready."
         />
         <ul className="mt-10 grid gap-5 md:grid-cols-3">
           {upcoming.map((t) => (

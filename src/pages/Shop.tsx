@@ -36,11 +36,11 @@ function ProductCard({ product }: { product: Product }) {
   const available = !product.placeholder && Boolean(href);
 
   return (
-    <article className="card flex flex-col p-4" aria-labelledby={`p-${product.id}`}>
+    <article className="card lift flex flex-col p-4" aria-labelledby={`p-${product.id}`}>
       <ProductArt product={product} />
       <div className="flex flex-1 flex-col px-2 pt-5 pb-2">
         <div className="flex flex-wrap items-center gap-2">
-          {product.placeholder && <Badge tone="placeholder">Placeholder · In development</Badge>}
+          {product.placeholder && <Badge tone="placeholder">Preview · In the works</Badge>}
           {product.price && !product.placeholder && <Badge tone="ink">{product.price}</Badge>}
         </div>
         <h3 id={`p-${product.id}`} className="mt-3 text-xl font-semibold">
@@ -80,16 +80,16 @@ export default function Shop() {
     <>
       <Seo
         title="Digital Shop: Financial Tools, Dashboards & Notion Systems"
-        description="Interactive financial tools, business dashboards, Notion systems, and operational resources designed for small business owners by FINCH."
+        description="Dashboards, Notion systems, and financial tools from FINCH for small business owners who like to run their own numbers."
       />
 
       <PageHero
         eyebrow="Digital shop"
-        title="Tools that make running your business feel lighter"
+        title="Tools for owners who like to keep a hand on the numbers."
         intro={
           <p>
-            Interactive financial tools, dashboards, Notion systems, and operational resources, designed so you can get
-            organized and understand your numbers on your own schedule.
+            Dashboards, Notion systems, and financial tools made by bookkeepers, for owners who want to see their
+            numbers without building the spreadsheet from scratch.
           </p>
         }
       >
@@ -100,7 +100,7 @@ export default function Shop() {
           </ButtonExternal>
         ) : (
           <ButtonLink to="/free-tools" variant="primary">
-            Try the free assessment while you wait
+            Take the 3-minute assessment while you wait
           </ButtonLink>
         )}
       </PageHero>
@@ -115,9 +115,9 @@ export default function Shop() {
         {allPlaceholders && (
           <div className="mb-8 rounded-2xl border border-finch-300/60 bg-finch-50 p-5 sm:flex sm:items-center sm:justify-between sm:gap-6">
             <div>
-              <p className="font-semibold text-ink-900">The FINCH shop is getting ready.</p>
+              <p className="font-semibold text-ink-900">The shop opens soon.</p>
               <p className="mt-1 text-ink-700">
-                The products shown are previews of what's in development and are not available to buy yet.
+                What you see here is in the works, so nothing's for sale just yet. Want a heads-up when it opens?
               </p>
             </div>
             <a
@@ -125,7 +125,7 @@ export default function Shop() {
               className="mt-4 inline-flex shrink-0 items-center gap-2 font-semibold text-finch-700 underline-offset-4 hover:underline sm:mt-0"
             >
               <Icon name="mail" className="h-4 w-4" />
-              Ask to be notified
+              Email me when it opens
             </a>
           </div>
         )}
@@ -158,15 +158,14 @@ export default function Shop() {
 
         <div className="mt-16 grid gap-6 rounded-3xl bg-ink-900 p-8 text-cream-100 sm:p-12 md:grid-cols-[1.5fr_1fr] md:items-center">
           <div>
-            <h2 className="text-2xl font-semibold text-cream-50 sm:text-3xl">Prefer to hand it off?</h2>
+            <h2 className="text-2xl font-semibold text-cream-50 sm:text-3xl">Would you rather not do it yourself?</h2>
             <p className="mt-3 leading-relaxed text-cream-200/85">
-              If you'd rather have someone keep your books accurate and current, FINCH bookkeeping services might be a
-              better fit.
+              Completely fair. Our bookkeeping services take the whole thing off your plate.
             </p>
           </div>
           <div className="md:text-right">
             <ButtonLink to="/bookkeeping" variant="light">
-              Explore bookkeeping
+              See bookkeeping services
             </ButtonLink>
           </div>
         </div>

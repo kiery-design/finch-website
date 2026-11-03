@@ -9,6 +9,9 @@
   --color-cream-100: #fbf6ec;
   --color-cream-200: #f3eadb;
   --color-cream-300: #e7d9c2;
+  /* Warm-neutral section background (between cream-100 and cream-200) */
+  --color-sand-100: #f6efe2;
+  --color-sand-200: #e0d2ba;
 
   --color-ink-950: #0e231e;
   --color-ink-900: #14302a;
@@ -81,6 +84,43 @@
   }
   .field-input {
     @apply block w-full rounded-xl border border-cream-300 bg-white px-4 py-3 text-base text-ink-900 placeholder:text-ink-500/70 transition focus:border-ink-600 focus:ring-2 focus:ring-ink-600/20 focus:outline-none aria-[invalid=true]:border-red-600;
+  }
+}
+
+@layer utilities {
+  /* Very subtle paper-grain texture. Add `grain` to any positioned section. */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .34 0 0 0 0 .22 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Gentle hover lift for cards */
+  .lift {
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+  @media (hover: hover) {
+    .lift:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 2px 4px rgb(20 48 42 / 0.05),
+        0 18px 40px -16px rgb(20 48 42 / 0.28);
+    }
+    .group:hover .photo-img {
+      transform: scale(1.025);
+    }
+  }
+  .photo-img {
+    transition: transform 0.7s ease;
   }
 }
 

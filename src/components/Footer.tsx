@@ -12,8 +12,7 @@ export default function Footer() {
         <div>
           <Logo inverted />
           <p className="mt-4 max-w-sm leading-relaxed text-cream-200/80">
-            Bookkeeping and practical business tools that help small business owners feel clear and
-            confident about their numbers.
+            Bookkeeping and practical business tools for owners who'd rather be running the business.
           </p>
           <a
             href={`mailto:${site.email}`}
@@ -46,7 +45,7 @@ export default function Footer() {
             </li>
             <li>
               <Link to="/contact?topic=bookkeeping" className="text-cream-200/85 hover:text-white">
-                Request a consultation
+                Talk to us about your books
               </Link>
             </li>
             {socials.map(([name, url]) => (

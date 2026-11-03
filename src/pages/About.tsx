@@ -10,61 +10,53 @@ export default function About() {
     <>
       <Seo
         title="About FINCH"
-        description="FINCH helps small business owners gain financial clarity, build better business systems, and feel more confident running their businesses."
+        description="FINCH is a small bookkeeping practice for business owners who’d rather spend their time on the business than on the books."
       />
 
       <PageHero
         eyebrow="About FINCH"
-        title="Financial clarity shouldn't feel out of reach"
+        title={founder ? `Hi, I'm ${founder.name}.` : 'Meet the person behind the books.'}
+        photo="aboutHero"
         intro={
-          <p>
-            FINCH exists to help small business owners understand their numbers, organize how their business runs, and
-            make decisions with confidence, without the jargon or the judgment.
-          </p>
+          founder ? (
+            <div className="space-y-4">
+              {founder.bio.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
+          ) : (
+            <p>
+              FINCH is a small bookkeeping practice for business owners who'd rather spend their time on the business
+              than on the books. When you work with FINCH, you work with a real person who knows your numbers, not a
+              rotating support queue.
+            </p>
+          )
         }
       />
 
       <Section labelledBy="why-heading">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-          <SectionHeading id="why-heading" eyebrow="Why FINCH" title="Built for the owners doing it all" />
+          <SectionHeading id="why-heading" eyebrow="Why FINCH" title="Most owners don't need more advice. They need current books." />
           <div className="space-y-5 text-lg leading-relaxed text-ink-700">
             <p>
-              Most small business owners didn't start their business to do bookkeeping. They started it to serve
-              clients, make things, and build something of their own. But the numbers still matter. Unclear finances
-              lead to stress, guesswork, and missed opportunities.
+              Plenty of businesses are doing well and still can't say what they made last quarter. It's rarely a
+              discipline problem. Bookkeeping is just the job that never feels urgent until the day it is.
             </p>
             <p>
-              FINCH brings together two kinds of support: <strong className="text-ink-900">bookkeeping services</strong>{' '}
-              for owners who want their books handled, and <strong className="text-ink-900">digital tools</strong> for
-              owners who want to build clarity on their own. Both are designed around the same idea: clarity is
-              something you can build, one practical step at a time.
+              So FINCH does two things. For owners who want it handled, we do the{' '}
+              <strong className="text-ink-900">bookkeeping</strong> every month and explain what it says. For owners who
+              like to stay hands-on, we make <strong className="text-ink-900">digital tools</strong> that skip most of
+              the setup. Either way, the numbers stop being a mystery.
             </p>
           </div>
         </div>
       </Section>
 
-      {founder && (
-        <Section tone="cream" labelledBy="founder-heading">
-          <div className="max-w-3xl">
-            <p className="eyebrow">Meet the founder</p>
-            <h2 id="founder-heading" className="mt-3 text-3xl font-semibold sm:text-4xl">
-              {founder.name}
-            </h2>
-            <p className="mt-1 text-ink-600">{founder.role}</p>
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-700">
-              {founder.bio.map((p) => (
-                <p key={p}>{p}</p>
-              ))}
-            </div>
-          </div>
-        </Section>
-      )}
-
-      <Section tone={founder ? 'default' : 'cream'} labelledBy="values-heading">
-        <SectionHeading id="values-heading" eyebrow="What we value" title="How FINCH works" />
+      <Section tone="cream" labelledBy="values-heading">
+        <SectionHeading id="values-heading" eyebrow="How we work" title="A few things you can count on" />
         <ul className="mt-10 grid gap-5 sm:grid-cols-2">
           {values.map((v) => (
-            <li key={v.title} className="rounded-2xl bg-white p-7 shadow-card">
+            <li key={v.title} className="lift rounded-2xl bg-white p-7 shadow-card">
               <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-finch-100 text-finch-700">
                 <Icon name={v.icon} />
               </span>
@@ -78,17 +70,18 @@ export default function About() {
       <Section labelledBy="about-cta-heading">
         <div className="rounded-3xl bg-ink-900 p-8 text-center sm:p-14">
           <h2 id="about-cta-heading" className="text-3xl font-semibold text-cream-50">
-            Let's make your numbers make sense
+            Sound like a good fit?
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-cream-200/85">
-            Start with the free assessment, or reach out to talk about bookkeeping support.
+            Send a note about your business, or take the 3-minute assessment first if you'd like to see where things
+            stand.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <ButtonLink to="/free-tools" variant="accent">
-              Take the free assessment
+            <ButtonLink to="/contact?topic=bookkeeping" variant="accent">
+              Talk to us about your books
             </ButtonLink>
-            <ButtonLink to="/contact" variant="light">
-              Get in touch
+            <ButtonLink to="/free-tools" variant="light">
+              Take the 3-minute assessment
             </ButtonLink>
           </div>
         </div>

@@ -19,7 +19,7 @@ export const services: Service[] = [
     icon: 'ledger',
     name: 'Monthly Bookkeeping',
     summary:
-      'Ongoing, month-by-month bookkeeping so your records stay current and you always have a clear picture of where your business stands.',
+      'We keep your books current every month, so you never have to wonder whether the numbers are up to date. (They are.)',
     includes: [
       'Categorizing income and expenses each month',
       'Reconciling bank and credit card accounts',
@@ -27,14 +27,14 @@ export const services: Service[] = [
       'Monthly financial reports you can actually read',
       'A simple check-in rhythm for questions as they come up',
     ],
-    goodFit: 'You want your books handled consistently so you can focus on running the business.',
+    goodFit: 'Your books are mostly current and you want them to stay that way without your involvement.',
   },
   {
     id: 'cleanup',
     icon: 'broom',
     name: 'Cleanup & Catch-Up Bookkeeping',
     summary:
-      'For books that have fallen behind or gotten messy. We work through the backlog and get your records accurate and organized again.',
+      'A few months behind, or a few years? We work through the backlog, reconcile every account, and fix whatever got miscategorized along the way. You end up with books you can build on.',
     includes: [
       'Reviewing where your books currently stand',
       'Catching up on uncategorized or missing months',
@@ -42,61 +42,61 @@ export const services: Service[] = [
       'Fixing miscategorized or duplicate transactions',
       'A clean starting point for monthly bookkeeping',
     ],
-    goodFit: "You're months behind, starting fresh, or getting ready for tax season and need things sorted.",
+    goodFit: "You've been meaning to catch up for a while, or tax season is coming and the books aren't ready.",
   },
   {
     id: 'reporting',
     icon: 'chart',
     name: 'Financial Reporting Support',
     summary:
-      'Help turning your numbers into reports, and helping you understand what those reports say about your business.',
+      "Reports are only useful if you can read them. We'll put them together and walk you through what they're telling you.",
     includes: [
       'Profit & loss and balance sheet reporting',
       'Plain-language walkthroughs of your reports',
       'Help spotting trends in revenue and spending',
       'Organized records ready to share with your tax professional',
     ],
-    goodFit: 'You have data but want help reading it and using it to make decisions.',
+    goodFit: 'You have the numbers but want help figuring out what they mean for the next decision.',
   },
 ];
 
 export const idealClients = [
-  'Solo owners and small teams who are doing the books themselves and are ready to hand them off',
-  'Service businesses, creatives, and online businesses with growing transaction volume',
-  'Owners who feel behind, uncertain, or anxious every time tax season comes around',
-  'Anyone who wants to make decisions from real numbers instead of guesses',
+  "Owners who've been doing their own books and would like their evenings back",
+  'Service businesses, creative studios, and online shops where the transactions add up fast',
+  "Businesses whose tax professional keeps asking for things that take a week to find",
+  "Anyone who'd rather make the next big decision from real numbers than a gut feeling",
 ];
 
 export const consultationSteps = [
   {
-    title: 'Reach out',
-    body: 'Send a short note through the contact page or email. Tell us a little about your business and where your books stand.',
+    title: 'Send a short note',
+    body: "Use the contact page or email us. What the business does and where the books stand is plenty to start.",
   },
   {
-    title: 'Have a conversation',
-    body: "We'll set up a consultation to talk through your needs, your current setup, and what support would help most.",
+    title: 'Talk it through',
+    body: "We'll set up a call to look at your current setup and figure out what kind of help makes sense.",
   },
   {
-    title: 'Get a clear proposal',
-    body: "If it's a good fit, you'll receive a recommended scope and next steps. No pressure, and no obligation.",
+    title: 'Get a clear quote',
+    body: "If it's a fit, you'll get a written scope and price before anything starts. If it isn't, we'll tell you that too.",
   },
 ];
 
 export const bookkeepingFaqs = [
   {
     q: 'How do I know if I need cleanup or monthly bookkeeping?',
-    a: "If your books are more than a month or two behind, or you aren't sure they're accurate, cleanup usually comes first. Once you're current, monthly bookkeeping keeps you there. We'll help you figure it out during the consultation.",
+    a: "If the books are more than a month or two behind, or you're not sure they're right, cleanup comes first. Once you're current, monthly bookkeeping keeps you there. We'll sort out which one you need on the first call.",
   },
   {
     q: 'What do I need to get started?',
-    a: "Usually access to your business bank and credit card accounts and to your bookkeeping software if you use one. We'll walk through exactly what's needed for your situation.",
+    a: "Usually read access to your business bank and credit card accounts, plus your bookkeeping software if you use one. We'll give you a short, specific list.",
   },
   {
     q: 'How is pricing determined?',
-    a: 'Pricing depends on factors like transaction volume, number of accounts, and how far behind the books are. We discuss scope and pricing after learning about your business in the consultation.',
+    a: "It depends on how many accounts you have, how busy they are, and, for cleanup, how far back we're going. We'll talk it through and give you a clear quote before any work starts.",
   },
   {
     q: 'Do you do taxes?',
-    a: 'FINCH focuses on bookkeeping and financial clarity. We keep your records organized and ready to share with your tax professional, who handles tax preparation and filing.',
+    a: "No. We're bookkeepers, not tax preparers. We keep your records in good shape so your tax professional can do their job quickly, which tends to make everyone happier.",
   },
 ];

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export type ButtonVariant = 'primary' | 'accent' | 'secondary' | 'ghost' | 'light';
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.95rem] font-semibold transition duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60 min-h-12 text-center';
+  'inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.95rem] font-semibold transition duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60 min-h-12 text-center sm:whitespace-nowrap';
 
 const variants: Record<ButtonVariant, string> = {
   primary: 'bg-ink-900 text-cream-50 hover:bg-ink-800 focus-visible:outline-finch-600',

@@ -66,7 +66,7 @@ export default function Header() {
 
         <div className="hidden lg:block">
           <ButtonLink to="/contact" variant="primary" className="!min-h-10 !px-5 !py-2 text-sm">
-            Contact FINCH
+            Get in touch
           </ButtonLink>
         </div>
 
@@ -109,7 +109,7 @@ export default function Header() {
           </ul>
           <div className="container-page pb-10">
             <ButtonLink to="/free-tools" variant="accent" className="w-full">
-              Take the free assessment
+              Take the 3-minute assessment
             </ButtonLink>
           </div>
         </nav>

@@ -222,16 +222,16 @@ export type Recommendation = {
   cta?: Cta;
 };
 
-const consult: Cta = { label: 'Request a bookkeeping consultation', to: '/contact?topic=bookkeeping' };
-const cleanupCta: Cta = { label: 'Learn about cleanup bookkeeping', to: '/bookkeeping#cleanup' };
-const monthlyCta: Cta = { label: 'Explore monthly bookkeeping', to: '/bookkeeping#monthly' };
-const shopCta: Cta = { label: 'Browse FINCH digital tools', to: '/shop' };
+const consult: Cta = { label: 'Talk to us about your books', to: '/contact?topic=bookkeeping' };
+const cleanupCta: Cta = { label: 'How cleanup works', to: '/bookkeeping#cleanup' };
+const monthlyCta: Cta = { label: 'How monthly bookkeeping works', to: '/bookkeeping#monthly' };
+const shopCta: Cta = { label: 'Browse the shop', to: '/shop' };
 
 export const recommendationLibrary: Record<string, Recommendation> = {
   cleanup: {
     id: 'cleanup',
     title: 'Get your books caught up first',
-    why: 'Your books are several months behind. Until they are current, every report and decision is based on incomplete information.',
+    why: "Your books are several months behind, which means every report you pull right now is missing a chunk of the story. Fix this first and everything else gets easier.",
     steps: [
       'Pick a cutoff date and gather statements for every business account since your books were last current.',
       'List any accounts you are unsure about. It helps to see the full picture.',
@@ -242,7 +242,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   catchupLight: {
     id: 'catchupLight',
     title: 'Close the gap before it grows',
-    why: 'You are a month or two behind. That is very manageable now and much harder in six months.',
+    why: "A month or two behind is very fixable. Six months behind is a project. Better to catch it now.",
     steps: [
       'Block one focused session this week to categorize the missing months.',
       'Reconcile each account against its bank statement balance.',
@@ -253,7 +253,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   separate: {
     id: 'separate',
     title: 'Separate business and personal money',
-    why: 'Mixed accounts make bookkeeping slower, reports less reliable, and tax time more stressful.',
+    why: "When business and personal spending share an account, someone has to untangle every transaction. Usually at tax time. Usually you.",
     steps: [
       'Open (or commit to using) a dedicated business checking account and card.',
       'Run all business income and expenses through those accounts going forward.',
@@ -263,7 +263,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   system: {
     id: 'system',
     title: 'Move to a consistent bookkeeping routine',
-    why: 'Tracking only when you remember leaves blind spots. A simple routine with the right tool makes your numbers trustworthy.',
+    why: "Tracking things when you remember means the numbers are only as good as your memory. A simple routine fixes that.",
     steps: [
       'Choose one place where all income and expenses are recorded.',
       'Connect your business bank feeds so transactions come in automatically.',
@@ -274,7 +274,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   monthlyReview: {
     id: 'monthlyReview',
     title: 'Start a monthly money check-in',
-    why: 'Looking at your numbers regularly is the fastest way to build clarity and catch problems early.',
+    why: "Thirty minutes with your numbers once a month catches most problems while they're still small.",
     steps: [
       'Schedule 30 minutes on the same day each month.',
       'Review three things: revenue, expenses, and profit compared with last month.',
@@ -285,7 +285,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   profitability: {
     id: 'profitability',
     title: 'Find out what is actually profitable',
-    why: 'Knowing which offers or clients make the most money helps you price, focus, and grow intentionally.',
+    why: "Some of your work almost certainly pays better than the rest. It's worth knowing which, before you set next year's prices.",
     steps: [
       'List your main offers or client types.',
       'Estimate revenue, direct costs, and time spent for each.',
@@ -296,7 +296,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   invoicing: {
     id: 'invoicing',
     title: 'Tighten up invoicing and collections',
-    why: 'Late or forgotten invoices directly hurt cash flow, even when the business is doing well.',
+    why: "A profitable business can still run short on cash if invoices go out late or nobody follows up.",
     steps: [
       'Send invoices the same day work is delivered, or on a fixed schedule.',
       'Turn on automatic payment reminders in your invoicing tool.',
@@ -306,7 +306,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   documentation: {
     id: 'documentation',
     title: 'Get processes out of your head',
-    why: 'When everything lives in your head, every task depends on you remembering it. That is draining and hard to delegate.',
+    why: "If the process only exists in your head, nobody else can do it, and you can't take a real day off.",
     steps: [
       'List the five tasks you repeat most often.',
       'Write a short checklist for each one in a single shared place.',
@@ -317,7 +317,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   admin: {
     id: 'admin',
     title: 'Win back hours from admin',
-    why: 'A heavy admin load takes time away from the work that grows your business.',
+    why: "Every hour spent on admin is an hour not spent on the work people actually pay you for.",
     steps: [
       'Track your admin tasks for one week and note how long each takes.',
       'Pick the most repetitive one to template, automate, or hand off.',
@@ -328,7 +328,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   taxes: {
     id: 'taxes',
     title: 'Make tax season boring (in a good way)',
-    why: 'Tax stress usually comes from records that are behind and money that was not set aside.',
+    why: "Tax season is stressful for two reasons: the records aren't ready, and the money wasn't set aside. Both are fixable well before April.",
     steps: [
       'Keep books current monthly so year-end is a review, not a rebuild.',
       'Set aside a percentage of each payment for taxes in a separate account. Ask your tax professional what percentage fits you.',
@@ -339,7 +339,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   goals: {
     id: 'goals',
     title: 'Set simple financial goals and a budget',
-    why: 'Goals turn your numbers into a direction. Without them it is hard to know whether the business is on track.',
+    why: "Without a target, it's hard to tell whether a good month was actually good.",
     steps: [
       'Set one revenue goal and one profit goal for the next quarter.',
       'Build a basic monthly budget from last quarter’s actual spending.',
@@ -350,7 +350,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   confidence: {
     id: 'confidence',
     title: 'Build decisions on real numbers',
-    why: 'Confidence comes from knowing your numbers are accurate and knowing how to read them.',
+    why: "Big decisions feel a lot less like guessing when you trust the numbers and know how to read them.",
     steps: [
       'Make sure your books are current and reconciled. Everything else depends on it.',
       'Learn the three core reports: profit & loss, balance sheet, and cash flow.',
@@ -361,7 +361,7 @@ export const recommendationLibrary: Record<string, Recommendation> = {
   keepGoing: {
     id: 'keepGoing',
     title: 'Protect what is working',
-    why: 'Your foundation is strong. The next step is keeping these habits consistent as the business grows.',
+    why: "You're in good shape. The trick now is keeping it that way as things get busier.",
     steps: [
       'Keep your monthly review rhythm, even in busy seasons.',
       'Revisit your goals each quarter and adjust as you learn.',
@@ -385,18 +385,18 @@ export const stages = [
     min: 0,
     name: 'Getting Grounded',
     summary:
-      "There's real opportunity here. A few foundational changes will make a big difference in how clear and in control you feel. You don't have to fix everything at once.",
+      "Good news: the fixes here are mostly simple ones, and the first one or two will make the biggest difference. Start at the top of the list below and work down.",
   },
   {
     min: 40,
     name: 'Building Momentum',
     summary:
-      'You have some good habits in place and a few gaps that are probably costing you time or peace of mind. Closing them will make your numbers much more useful.',
+      "The basics are there. A few gaps are probably costing you time, and closing them will make your numbers a lot more useful.",
   },
   {
     min: 70,
     name: 'Running with Clarity',
     summary:
-      'You have strong financial habits and solid visibility into your business. Your next gains come from consistency, refinement, and freeing up your time.',
+      "You're running a tight ship. The next step is less about fixing things and more about handing off the routine work so you can focus elsewhere.",
   },
 ];
