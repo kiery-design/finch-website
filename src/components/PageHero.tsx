@@ -30,7 +30,7 @@ export default function PageHero({ eyebrow, title, intro, children, photo }: Pag
             name={photo}
             priority
             sizes="(min-width: 1024px) 440px, 100vw"
-            className="hidden aspect-[4/3] rounded-3xl shadow-[0_24px_48px_-28px_rgba(60,40,20,0.45)] sm:block lg:aspect-[4/4.4]"
+            className="block aspect-[4/3] rounded-3xl shadow-[0_24px_48px_-28px_rgba(60,40,20,0.45)] sm:block lg:aspect-[4/4.4]"
           />
         )}
       </div>
